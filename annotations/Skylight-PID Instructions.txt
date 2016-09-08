@@ -1,0 +1,9 @@
+=== INITIAL SETUP INSTRUCTIONS ===
+
+PIDs calibration
+
+Rudder/aileron surface gains
+
+> Hold yaw with rudder
+  - Too much gain causes sideslips
+  - Depending on gain, the calculated versus real turn will change

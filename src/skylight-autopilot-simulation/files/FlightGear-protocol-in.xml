@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <generic>
+
+  <input>
+   <line_separator>\n</line_separator>
+   <var_separator>,</var_separator>
+
+   <chunk>
+    <name>aileron</name>
+    <type>float</type>
+    <node>/controls/flight/aileron</node>
+   </chunk>
+
+   <chunk>
+    <name>aileron-trim</name>
+    <type>float</type>
+    <node>/controls/flight/aileron-trim</node>
+   </chunk>
+   
+   <chunk>
+    <name>elevator</name>
+    <type>float</type>
+    <node>/controls/flight/elevator</node>
+   </chunk>
+
+   <chunk>
+    <name>elevator-trim</name>
+    <type>float</type>
+    <node>/controls/flight/elevator-trim</node>
+   </chunk>
+   
+   <chunk>
+    <name>rudder</name>
+    <type>float</type>
+    <node>/controls/flight/rudder</node>
+   </chunk>
+
+   <chunk>
+    <name>rudder-trim</name>
+    <type>float</type>
+    <node>/controls/flight/rudder-trim</node>
+   </chunk>
+   
+   <chunk>
+    <name>throttle</name>
+    <type>float</type>
+    <node>/controls/engines/engine[0]/throttle</node>
+   </chunk>
+
+   <chunk>
+    <name>starter</name>
+    <type>boolean</type>
+    <node>/controls/engines/engine[0]/starter</node>
+   </chunk>
+   
+   <chunk>
+    <name>nav-lights</name>
+    <type>boolean</type>
+    <node>/controls/lighting/nav-lights</node>
+   </chunk>
+
+   <chunk>
+    <name>strobe</name>
+    <type>boolean</type>
+    <node>/controls/lighting/strobe</node>
+   </chunk>
+   
+   <chunk>
+    <name>landing-lights</name>
+    <type>boolean</type>
+    <node>/controls/lighting/landing-lights</node>
+   </chunk>
+
+   <chunk>
+    <name>camera-fov</name>
+    <type>float</type>
+    <node>/sim[0]/current-view/field-of-view</node>
+   </chunk>
+
+   <chunk>
+    <name>camera-azimuth</name>
+    <type>float</type>
+    <node>/sim[0]/current-view/heading-offset-deg</node>
+   </chunk>
+   
+   <chunk>
+    <name>camera-elevation</name>
+    <type>float</type>
+    <node>/sim[0]/current-view/pitch-offset-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>camera-roll</name>
+    <type>float</type>
+    <node>/sim[0]/current-view/roll-offset-deg</node>
+   </chunk>
+
+  </input>
+
+ </generic>
+
+</PropertyList>

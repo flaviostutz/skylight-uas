@@ -1,0 +1,5 @@
+Onboard UAV:
+-XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false
+
+Optional:
+-XX:+PrintGCDetails -XX:+PrintGCTimeStamps

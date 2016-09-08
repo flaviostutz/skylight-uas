@@ -1,0 +1,166 @@
+=== GROUND TESTS ===
+Communication
+  - Ground station commands/uploads are being received by vehicle when high telemetry is active
+  - Messages are being prioritized on high telemetry demands without parsing/stream errors (considering no RF losses)
+  - Turn off/on modems and verify signal loss/recovery on alerts
+  - Turn off/on gps and verify signal loss/recovery on alerts
+  - Saturate modem tx power and verify the correct handling of broken RF packets receipt
+  - Acceptable latency perceived between AP attitude and artificial horizon (rotate IMU and see artificial horizon/airplane on screen)
+
+Maintenance
+  - Set altimeter setting (verify pressure altitude changes)
+  - Calibrate onboard systems (verify alert deactivation)
+  - Set ground level (verify if AGL turns to Zero)
+  - Arm failsafes (turn-off overo and verify hardware failsafe activated)
+  - Disarm failsafes (turn-off overo and verify hardware failsafe not activated)
+  - Replace datalink by PPP (connect to vehicle by PPP and open an ssh connection)
+  - Reboot systems (Reboot systems and verify clean bootup. measure time)
+  - shutdown systems (Arm failsafes and shutdown system without activating them)
+  - Upload an autopilot update using UploadFileToVehicle, reboot systems and verify the new version
+  - Verify onboard computer behavior while in Waypoint Mode for 30 min. Verify CPU and memory using Telnet tunnel
+
+Instruments
+  - Verify if raw readings from EFIS are correct
+    - Roll               RollRate
+    - Pitch              PitchRate
+    - Yaw                YawRate
+    - AccelX             GyroX
+    - AccelY             GyroY
+    - AccelZ             GyroZ
+    - Pitot pressure     StaticPressure
+    - Autopilot temp     CilinderHead temp
+    - Main batt level    Aux batt level
+    - Engine RPM         Effective msgs freq
+    - Failures:        FlightTerminationActivated    
+                       IMUSensorsFailed
+                       DynPressFailed
+                       StatPressFailed
+                       SystemReset
+                       OtherFailure
+    - Warnings:        GyrosSaturation
+                       AccelSaturation
+                       DynPressSaturation
+                       OtherWarning
+                       CRCErrorOnReceivedMessage
+    - Infos:           ManualRemoteControl
+                       CalibrationPerformed
+                       GimbalInverted
+  
+Actuation
+   - play with min/max/trim uS on different servo positions to verify runtime changing on servo positioning when setting up parameters
+   - sweep servos to min/center/max values after setup and verify expected physical range
+      - Aileron left    Aileron right
+      - Rudder          Elevator
+      - Throttle        Generic
+      - Cam pan         Cam tilt
+   - Use joystick to control servos and verify command latency
+
+Hold controls (done with vehicle)
+   - HOLD_ROLL_WITH_AILERON (activate zero and verify servo travel when rotating IMU)
+   - HOLD_PITCH_WITH_ELEV_RUDDER (activate zero and verify servos travelling when rotating IMU around roll/pitch)
+   - HOLD_IAS_WITH_THROTTLE (activate mid value and verify servo travel while blowing pitot)
+   - HOLD_COURSE_WITH_YAW (do not test. is being bypassed by now)
+   - HOLD_YAW_WITH_ELEV_RUDDER (activate any position and verify rudder/elevator travel when rotating around roll/yaw)
+   - HOLD_ALTITUDE_WITH_PITCH (activate high altitude and verify rudder/elevator actuation)
+   - HOLD_GROUNDSPEED_WITH_IAS (activate high groundspeed and verify throttle changing because of IAS_WITH_THROTTLE)
+   - HOLD_IAS_WITH_PITCH (put vehicle in zero roll/pitch. activate high altitude and verify a negative elevator - trying to increase pitch)
+   - HOLD_COURSE_WITH_ROLL (set a far course from current course and verify aileron trying to change roll)
+   - HOLD_ALTITUDE_WITH_THROTTLE (activate high altitude and verify throttle actuation)
+
+Flight Path Modes
+   - No mode (configure not to keep stable and verify no changes in servos, activate keep stable and verify aleron servos traveling
+   - Flight Director (hold/unhold speed/altitude/heading and verify servos actuation in right direction)
+   - Loiter (activate a loiter and verify servos heading to destination)
+   - Waypoint (activate a loiter and verify servos heading to destination. activate manual override on altitude and verify elevator travel)
+   - Safety action (set 'loiter with roll descending' for link down, turn-off modem and verify servos actuation towards holding level/airspeed)
+
+Mission management
+   - Create a new mission with some waypoints
+   - Create a route and add some waypoints to it
+   - Define basic Rules Of Safety
+   - Upload mission
+   - Activate any waypoint and verify servos trying to head the direction
+
+Mission RulesOfSafety
+   - Configure RulesOfSafety as needed by OutbackChallenge docs
+   - Turn off GPS link and verify if GPS recovery procedures are OK
+   - Turn off modem link and verify if data link recovery procedures are OK
+   - Turn off both links and verify if crashinator is being activated by FlightTermination hardware
+   - Create a boundary near the vehicle, configure action 'loiter with roll descending' if passed boundary and physically cross the boundary to verify action taking place
+
+Payload
+   - Camera
+      - Change camera servos setpoint by direct servo commands
+      - Verify min/max servo travel angle and setup
+      - Activate payload azimuth/elevation angle relative to vehicle and verify correct physical positioning
+      - Activate payload azimuth/elevation angle relative to earth and verify correct physical positioning while rotating IMU (should not change orientation according to earth)
+      - Activate different camera profiles
+      - Change camera zoom and verify latency
+      - Play with camera controls using joystick (azimuth/elevation/zoom)
+      - Turn video transmitters on and verify good video quality for watching
+      - Record transmitted video and verify good playback quality
+   - Bottle drop dispenser
+      - Activate bottle drop dispenser by commanding door state to OPEN
+      - Create a mission waypoint, associate a PayloadActionWaypoint whose SENSOR1 state is TURN_ON and verify that when this waypoint is activated, the payload port is open for releasing the bottle
+   - Right click map and select Bottle Drop planning
+   - Fill options and click OK so that some waypoints will be created
+   - Upload those waypoints to vehicle and activate the route. Verify activation.
+
+Alerts
+   - For testing each alert, cause the alert trigger, verify ground station awareness of alert activation and subs
+   - Remove the alert condition while verifying ground station changing to 'clear' status
+	ALTITUDE_OUTSIDE_VEHICLE_LIMITS
+	VEHICLE_OUTSIDE_MISSION_BOUNDARIES
+	VEHICLE_INSIDE_PROHIBITED_REGION
+	VEHICLE_OUTSIDE_AUTHORIZED_ALTITUDE
+	SHORT_CIRCUIT_IN_MISSION_PLAN
+	DANGEROUS_VEHICLE_ATTITUDE
+	STALL_WARNING
+	IAS_ABOVE_LIMITS
+	INSUFICIENT_FUEL_TO_RETURN_HOME
+	MAX_TIME_FLYING_REACHED_VEHICLE
+	MAX_TIME_FLYING_REACHED_MISSION
+	ZERO_RPM_DETECTED
+	ENGINE_TEMPERATURE_TOO_HIGH
+//	LOW_FUEL
+
+	ADT_LATENCY_WARNING
+	ADT_DOWNLINK_STRENGTH_WARNING
+	GDT_DOWNLINK_STRENGTH_WARNING
+	GPS_LINK_WARNING
+
+	//SPECIAL ALERTS WHOSE SAFETY ACTION IS CONFIGURED ON RULES OF SAFETY
+	ADT_DOWNLINK_FAILED
+	GPS_LINK_FAILED
+	
+	SENSOR_SATURATION_WARNING
+	IMU_FAILED
+	HARDWARE_MESSAGE_CRC_ERROR
+	AUTOPILOT_TEMPERATURE_TOO_HIGH
+	STATIC_PRESSURE_SENSOR_FAILED
+	PITOT_PRESSURE_SENSOR_FAILED
+	LOW_ACTUATOR_MESSAGES_FREQUENCY
+	HARDWARE_SYSTEM_RESET_WARNING
+	HARDWARE_GENERIC_WARNING
+	HARDWARE_GENERIC_FAILURE
+	MAIN_BATTERY_WARNING
+	AUX_BATTERY_WARNING
+	
+	FUEL_NOT_SET
+	ONBOARD_SYSTEMS_NOT_CALIBRATED
+	GROUND_LEVEL_NOT_SET
+	
+	MISSION_WARNING
+	MISSION_ERROR
+	SAFETY_PROCEDURE_ACTIVATED
+	FLIGHT_TERMINATION_HARDWARE_ACTIVATED
+	
+	LOW_DISK_SPACE
+	SOFTWARE_FINE
+	SOFTWARE_WARNING
+	SOFTWARE_ERROR
+	SOFTWARE_WORKER_WARNING
+	SOFTWARE_WORKER_ERROR
+
+
+47570 - Andre Rocha

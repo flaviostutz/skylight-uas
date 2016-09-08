@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SkylightCommons">
+  <test verbose="2" name="br.skylight.commons.dli.gateways.MiscTests" annotations="JDK">
+    <classes>
+      <class name="br.skylight.commons.dli.gateways.MiscTests"/>
+    </classes>
+  </test>
+</suite>

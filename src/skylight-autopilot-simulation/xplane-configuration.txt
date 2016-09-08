@@ -1,0 +1,8 @@
+Settings -> Net Connections -> Advanced
+   - IP for Data Output: localhost:49010
+   - UDP Port: receive on: 49000 (don't know why this is not the same as data output)
+               send on: 49001
+Settings -> Data Input Output -> Dataset
+   - Check Internet column for 3,4,6,17,18,19,20,21,37,48,54
+   
+Configure VSM's xplane UDP messaging service to send data to port 49010 and receive from 49001

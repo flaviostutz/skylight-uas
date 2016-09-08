@@ -1,0 +1,9 @@
+===Servo===
+Aileron left: 1220 - 1820   INVERSE
+Aileron right: 1200 - 1790   trim 50
+Rudder: 1250 - 1750   INVERSE
+Elevator: 1190 - 1720
+Throttle: 1680 - 1760 invertido   INVERSE  (range rc 1150 - 1980)
+Generic servo: 750 - 1100
+Camera Pan: 580-2450   184  trim -30
+Camera Tilt: 550 - 2300   180 graus

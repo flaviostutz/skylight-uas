@@ -1,0 +1,29 @@
+br.skylight.commons.plugins.workbench.WorkbenchPlugin
+
+#SERVICES
+br.skylight.cucs.plugins.core.CorePlugin
+br.skylight.cucs.plugins.subscriber.SubscriberPlugin
+br.skylight.cucs.plugins.communications.CommunicationsPlugin
+br.skylight.cucs.plugins.sound.SoundPlugin
+br.skylight.cucs.plugins.gamecontroller.GameControllerPlugin
+br.skylight.cucs.plugins.skylightvehicle.SkylightVehiclePlugin
+br.skylight.cucs.plugins.logplayer.LogPlayerPlugin
+br.skylight.commons.plugins.datarecorder.DataRecorderPlugin
+br.skylight.commons.plugins.streamchannel.StreamChannelPlugin
+
+#DIALOG EXTENSIONS
+br.skylight.cucs.plugins.preferences.PreferencesPlugin
+
+#VIEW EXTENSIONS
+br.skylight.cucs.plugins.controlmap2d.ControlMap2DPlugin
+br.skylight.cucs.plugins.vehiclecontrol.VehicleControlPlugin
+br.skylight.cucs.plugins.vehicleconfiguration.VehicleConfigurationPlugin
+br.skylight.cucs.plugins.timer.TimerPlugin
+br.skylight.cucs.plugins.dataviewer.DataViewerPlugin
+br.skylight.cucs.plugins.systemstatus.SystemStatusPlugin
+br.skylight.cucs.plugins.logplayer.LogPlayerPlugin
+br.skylight.cucs.plugins.flightdirector.FlightDirectorPlugin
+br.skylight.cucs.plugins.loiterdirector.LoiterDirectorPlugin
+br.skylight.cucs.plugins.missionplan.MissionPlanPlugin
+br.skylight.cucs.plugins.payload.PayloadPlugin
+br.skylight.cucs.plugins.engine.EngineControlPlugin

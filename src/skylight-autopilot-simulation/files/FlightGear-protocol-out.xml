@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <generic>
+
+  <output>
+   <line_separator>\n</line_separator>
+   <var_separator>,</var_separator>
+
+   <chunk>
+    <name>groundspeed</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/velocities/groundspeed-kt</node>
+   </chunk>
+
+   <chunk>
+    <name>speed east</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/velocities/speed-east-fps</node>
+   </chunk>
+
+   <chunk>
+    <name>speed north</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/velocities/speed-north-fps</node>
+   </chunk>
+   
+   <chunk>
+    <name>pos-longitude-deg</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/position/longitude-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>pos-latitude-deg</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/position/latitude-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>pos-alt-msl</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/position/altitude-ft</node>
+   </chunk>
+
+   <chunk>
+    <name>yaw</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/orientation/heading-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>yaw-rate</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/orientation/yaw-rate-degps</node>
+   </chunk>
+   
+   <chunk>
+    <name>pitch angle</name>
+    <format>%f</format>
+    <type>float</type>
+    <node>/orientation/pitch-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>pitch rate angle</name>
+    <format>%f</format>
+    <type>float</type>
+    <node>/orientation/pitch-rate-degps</node>
+   </chunk>
+
+   <chunk>
+    <name>roll angle</name>
+    <format>%f</format>
+    <type>float</type>
+    <node>/orientation/roll-deg</node>
+   </chunk>
+
+   <chunk>
+    <name>roll rate angle</name>
+    <format>%f</format>
+    <type>float</type>
+    <node>/orientation/roll-rate-degps</node>
+   </chunk>
+
+   <chunk>
+    <name>engine-rpm</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/engines/engine[0]/rpm</node>
+   </chunk>
+
+   <chunk>
+    <name>pitot pressure</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/systems/pitot/total-pressure-inhg</node>
+   </chunk>
+
+   <chunk>
+    <name>static pressure</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/systems/static/pressure-inhg</node>
+   </chunk>
+
+   <chunk>
+    <name>batt voltage</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/systems/electrical/volts</node>
+   </chunk>
+
+   <chunk>
+    <name>accel x</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/accelerations/pilot/x-accel-fps_sec</node>
+   </chunk>
+
+   <chunk>
+    <name>accel y</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/accelerations/pilot/y-accel-fps_sec</node>
+   </chunk>
+
+   <chunk>
+    <name>accel z</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/accelerations/pilot/z-accel-fps_sec</node>
+   </chunk>
+
+   <chunk>
+    <name>magnetic variation</name>
+    <type>float</type>
+    <format>%f</format>
+    <node>/environment/magnetic-variation-deg</node>
+   </chunk>
+
+  </output>
+  
+ </generic>
+
+</PropertyList>

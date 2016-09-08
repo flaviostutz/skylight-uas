@@ -1,0 +1,36 @@
+FlightGear PIDs
+
+Roll damp: 20
+
+Rudder gain: 5
+Elevator gain: 0.5
+
+Roll with aileron/rudder
+2   0,1   0
+
+Pitch with elevator
+4   0,005   0
+
+Yaw with elev/rudder
+1   0,1   0
+
+IAS with throttle
+0,5   0,3    0
+
+Heading with rudder
+1   0,001  1
+
+Altitude with pitch
+0,04 0,1    1
+
+Groundspeed with IAS
+0   0,1    0
+
+IAS with pitch
+0   0,01    0
+
+Heading with roll
+0,6 0      1
+
+Altitude with throttle
+1   0,001  0

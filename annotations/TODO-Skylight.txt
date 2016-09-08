@@ -1,0 +1,172 @@
+TODO Skylight
+
+>>> 2013
+   - Implementar Golay 23/12 para resiliência de perda de 3bits/12bits (mesmo da Voyager 1 e 2)
+
+
+>>> NOVOS
+	- Qdo zero RPM, loiter with roll descending está tentando manter altitude com pitch, ao invés de manter IAS com pitch!
+	- No ground station às vezes a configuração do veículo fica desatualizada e temos que baixá-la novamente
+	- Alertas "antigos" que não são mais reais depois da reconfiguração do avião não somem (AGL too high etc)
+	- Criar "modo glide", a ser ativado quando for detectado ZERO RPM: Não existirá mais hold de altitude, e o hold de IAS será por PITCH. Os modos funcionarão "normalmente"
+
+>> Agora
+  - OK: Gerar alerta de CRC
+  - OK: Mostrar alerta com pior status quando passar o mouse sobre o estado de subsistema
+  - VSM
+      - Implementar captura de vídeo com streaming UDP
+	 - STK1160 Video Capture Device driver
+	 - vid 05e1 pid 0408
+  - CUCS
+      - Polígonos e formas não são arrastados corretamente (só aparecem depois que solta o mouse)
+      - Calcular solução reversa EARTH TO VEHICLE para rotação e implementar
+      - Definir solução de gravação/reprodução do vídeo
+         - Ver como fazer no Java gravando MPEG2
+      - Criar rastro da sombra de camera para sabermos onde a camera já passou
+      - Corrigir sombra da camera no mapa 2D
+      - Fazer controle de camera com click em posição da imagem sendo visualizada
+          - Click simples para stare
+          - Click duplo para stare+loiter
+      - Realizar missão do Outback no XPlane
+      - Fazer botão direito no mapa com ADD ROUTE. Depois de adicionada, os waypoints adicionados estarão dentro dele
+      - Fazer FAILED piscar
+      - Incluir botão de reset na posição do avião 3D
+      - TESTAR: Implementar input de coordenadas alternativo em minutos/segundos
+      - TESTAR: Fazer tela do Flight Director aceitar troca para heading de yaw (utilizado quando GPS down)
+          - Utilizar controle de roll para vôo sem GPS
+      - TESTAR: Fazer botão de cancelar envio no File Transfer e resolver problemas intermitentes
+      - TESTAR: Altitude inicial para manual recovery e data link recovery
+            NAO FUNCIONANDO
+      - TESTAR: Utilitário de geração de waypoints para drop automático
+      - TESTAR: Altitude fica zero (perigoso) logo que o controle é selecionado
+      - OK: Não está aparecendo controles do payload da camera
+      - OK: Polígonos e formas não estão sendo gravados no veículos
+      - OK: Edição da missão está com problemas
+      - OK: Consertar edição de rotas da missão
+      - OK: Utilizar sempre o waypoint selecionado como o anterior do novo waypoint
+      - OK: Joystick não está excluindo bind anterior no override
+      - OK: Enviar versão em sofware status message
+      - OK: Verificar funcionamento do avião 3D
+      - OK: Fazer view para mostrar MiscInfos
+      - FUTURE: Incluir opção na configuração do veículo para habilitar/desabilitar controle vertical invertido em baixo IAS
+      - FUTURE: Incluir opção na configuração do veículo para habilitar/desabilitar roll zerado/roll atuador com pouco erro de course
+  - Linux
+      - Implementar switch de PPP no Linux com AP
+      - Habilitar telnet no Overo para acesso via tunel
+  - Autopilot
+      - IMU ainda sofre muito com vibração (o range de estabilidade é muito pequeno)
+      - Incluir propriedade para remover verificações adicionais antes de iniciar uma safety procedure
+      - Ativar/desativar safety procedures junto a ativação dos failsafes de hardware
+      - Verificar erros de deserialização do repositório durante inicialização
+      - Magnetometro com problema de soft iron
+      - Declinação magnética com problema
+      - Restaurar configuração dos trims da camera pra o piloto automático (estava com problema com valores negativos)
+      - Implementar maneira de aumentar sensibilidade do modem on demand
+      - Implementar reboot forçado
+      - Revisar logs no nível de info para evitar problemas de sobrecarga no datalink
+      - Colocar número de satélites e tipo de fix no MiscInfo
+      - Problema ao tentar mudar potencia do modem recebendo telemetria
+      - Verificar pq Software Status não está funcionando com scheduled
+      - Verificar alguns problemas de envio de mensagem zerada qdo o link está ruim (problema de sincronização no reuso de instâncias?)
+      - Testar velocidade vertical
+      - Implementar DEM para maior precisão da camera em solo caso o terreno tenha muita diferença
+      - Às vezes dá problema de NullPointer na transmissão de arquivo (FileTransferOperator:97)
+      - Transferência de arquivos grandes dá timeout
+      - Verificar se está utilizando AGL para verificação de altitude
+      - TESTAR: Fazer NMEA ignorar posições 0 ou sem fix
+      - TESTAR: NaN de feedback no pid IAS with throttle
+      - TESTAR: Consertar alerta de saturação do pitot
+      - TESTAR: Fazer com que o NMEA não pegue lat/long qdo estiver sem fix
+      - TESTAR: Fazer gravação de telemetria em alta frequência qdo solicitado
+      - TESTAR: Zoom inicial com problema
+      - TESTAR: Reativar profile da camera quando ligá-la
+      - TESTAR: Tirar indice do PluginManager da area de temp
+      - TESTAR: Testar watchdog com cuidado
+      - TESTAR: Filtrar leitura de pressão estática
+      - TESTAR: Hold course with roll está ativando somente os controles de baixo nível. Ele mesmo não aparece ativo
+      - TESTAR: Implementar solução de sincronização de relógios (fazer VSM enviar comando de sincronização de relógio qdo receber a primeira mensagem)
+      - TESTAR: Fazer Flight Termination comandar hardware
+      - TESTAR: Verificar se o piloto está utilizando a info de gimbal invertido para comandar Visca
+      - AVALIAR: Limitar change no throttle para evitar motor morrer/falhar
+      - AVALIAR: Criar função para ligar/desligar PIDs individualmente para evitar muito uso de banda
+      - AVALIAR: Incluir na configuração do avião opção para desligar a transmissão de alertas
+      - OK: Avaliar freq do InstrumentsService sem consumo de pacotes que sobram na leitura dos instrumentos
+      - OK: Ver se está dando serial overun durante as operações
+      - OK: Parece que o modem não está guardando as configurações entre reboots
+      - OK: Visca não pode dar timeout na leitura read() com RXTX
+      - OK: Download está retornando corrompido
+      - OK: Não gravou trims no piloto automático
+      - OK: Payload operator da camera não está enviando status atual - colocar vectormath no classpath
+      - OK: Quando inverte a configuração do servo o range fica prejudicado
+      - OK: Telemetria de control source está com problema (no gateway está OK)
+      - OK: Throttle não deve utilizar -127 a 127
+      - OK: Verificar pq não recebemos telemetria do operador de Camera (ele ativa) - falta vector math
+      - OK: NMEA parser com problema
+      - OK: Fazer contador de erro de entrega de pacotes com AC4790
+      - OK: Incluir flag de controle manual
+      - OK: verificar pq qdo desativa PID ele seta como NaN
+      - OK: Trocar canais dos servos
+                alvo        atual
+            1 - Aileron 1 (aileron left)
+            2 - Elevator (aileron right)
+            3 - throttle (elevator)
+            4 - rudder (nao funcionou ainda)
+            5 - generico/controle manual (throttle)
+            6 - Aileron 2 (nao funcionou ainda)
+            7 - Camera tilt (camera pan)
+            8 - Camera pan (camera tilt)
+      - OK: criar flag de inversão do sinal do servo
+      - OK: GPS and Data Link loss fica entrando toda hora (tem que fazer entrar só uma vez)
+      - OK: Excluir locks de porta do RXTX no script de inicialização
+      - OK: Considerar que passou no waypoint se a área do loiter que o avião descrever compreender o waypoint target
+      - FUTURE: Correção de instalação de Yaw (mudar eixos roll/pitch) no autopilot hw
+      - FUTURE: Corrigir controle de course com yaw
+      - FUTURE: Otimizar algoritmo de MovingAverage e LinearRegression para utilizar buffer circular na guarda de samples
+      - FUTURE: QDO TIVE CONTROLE INVERTIDO: Fazer limitador de rate do throttle para evitar problemas no motor
+  - X-Plane
+      - Criar roteiro de ajuste de PIDs/ganhos de superfícies
+      - Engine control não aparece
+      - Fazer camera funcionar
+      - Realizar testes no XPlane
+          - OK: Heading magnético corrigido com declinação
+          - OK: Comportamento dos PIDs
+          - OK: Problema na altitude PRESSURE
+          - verificação de efetividade de atuacao proporcional ao airspeed
+
+  - TESTAR: Implementar interpolação de RSSI
+  - TESTAR: Implement engine status messages
+  - TESTAR: Implementar gateways de hardware
+       - OK: Considerar declinação magnética no onboard
+       - OK: Revisar escala dos float dos dados
+  - TESTAR: Gerar alerta para frequência de recebimento baixa no Hardware
+  - TESTAR: Quando entra na safety action "Roll descending" e volta para Flight Director o veículo fica de ponta cabeça
+  - TESTAR: Manual Recovery location default altitude deve ser 
+  - TESTAR: Aparentemente o link trava depois de sair do boundary com "roll descending" e voltar Waypoint mode ser ativado
+  - OK: Upload de missão com problemas
+  - OK: Piloto parou de responder a comandos. Fazia telemetria normalmente e não foram encontrados erros no log. Reiniciamos a JVM e tudo voltou ao normal.
+  - OK: Botão de Remove waypoint na view Mission Plan com problema
+  - OK: Consertar filtro de stream
+  - OK: Fazer com que os alertas só sejam retratados depois de serem desativados e ativados novamente (exemplo: sai do boundary, entro em Flight Director ainda fora do boundary e não quero que ele reative o alerta)
+  - OK: Colocar validação de -1 no Ac4790 Stream Filter
+  - OK: Criar status bar com indicação de status de subsystemas
+  - OK: Testar funcionamento com AC4790
+  - OK: Testar gateways onboard
+  - OK: Criar botão de ARM Flight Termination para operador
+  - OK: Criar botão de SHUTDOWN dos sistemas (Linux etc)
+       - OK: Desarmar Flight Termination no SHUTDOWN
+  - OK: Implementar gateway do XPlane
+
+>> Futuro
+
+Envio de pressão ao nível do mar para veículo continuamente
+
+Criar console formatado (VT100) para VSM com dados de situação
+
+Incluir opção de considerar LOITER finalizado qdo estiver na direção do próximo waypoint
+
+Incluir capacidade de observar altitude de superfície nos formatos SRTM and DTED Terrain Data para otimizar gimbal
+ - Modos HEIGHT ABOVE LAUNCH ou MSL considerando Terrain Data
+
+Incluir visão de altitude no mapa 2D
+
+Implementar reporter para VehicleOperatingStates

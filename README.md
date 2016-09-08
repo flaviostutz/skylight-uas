@@ -16,7 +16,7 @@ The third architecture version (current) relies on:
 * Ground Station (based on plugins)
 * [Rascal Model Airplane] (http://www.sigmfg.com/IndexText/SIGRC80.html)
 * VSM for Ground Station to Vehicle coordination
-* Communications, control and structure compatible with OTAN's STANAG 4586 (in theory OTAN could control our Vehicle, and our Ground Station could control OTAN's drones)
+* Communications, control and structure compatible with NATO's STANAG 4586 (in theory OTAN could control our Vehicle, and our Ground Station could control OTAN's drones)
 * Self made electronics board for sensoring and actuation
 * See /docs for more documentation (there are some documents that we sent to UAV Outback Challenge describing our system)
 

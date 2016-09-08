@@ -1,0 +1,39 @@
+=======================
+ Vehicle Configuration
+=======================
+| Fuel |
+Initial propulsion energy: _______  >SET
+
+| General |
+SkylightVehicleConfiguration message fields
+
+| Servos |
+Name              Trim(%)   EPA min(%)   EPA max(%)
+> Aileron Left    _0_         _60_         _60_         >SET
+> Rudder          _2_         _54_         _50_         >SET
+...    
+* set servo to neutral, max or min position on ENTER keypress on field
+
+| PIDs |
+Name                        A  S     Setpoint   
+> [+] Aileron from roll     30/29      _29_      >HOLD  >UNHOLD  >TIMED HOLD   -> asks for a second setpoint and the time between those two setpoint switches in loop. click on unhold stops timed change
+                            P:_5_   I:_0.4_   D:_0_     >SET   >GRAPH
+
+=================
+ Servo Control
+=================
+> >JOY Aileron Left   32    _34_   >SET
+> >JOY Rudder         11    _14_   >SET
+...
+
+
+=========
+ Targets
+=========
+- Target 3  -> Go there
+- Target 1     Delete
+
+
+=================
+ Payload control
+=================

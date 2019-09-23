@@ -3,6 +3,8 @@ This is a complete Unmanned Aerial System composed of an Autopilot, along with a
 
 * [See here our presentation at Outback Challenge 2010] (docs/SkylightTeamPresentation.pdf]
 
+![ground station](docs/groundstation.png)
+
 ## Design
 
 This is the third version of the architecture of the UAS hardware and software.
@@ -12,8 +14,6 @@ The first version was based on a self made electronics with sensors and actuator
 At this point we decided to use a second version of the architecture with an onboard computer and a Java main application. In the middle of the refactoring process we realized some great improvements over energy usage, computer dimensions and software architecture, so we started the refactoring to our third version.
 
 ![system architecture](docs/architecture.png)
-
-![ground station](docs/groundstation.png)
 
 The third architecture version (current) relies on:
 * 900MHz modem

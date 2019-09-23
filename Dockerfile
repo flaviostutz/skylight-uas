@@ -29,6 +29,12 @@ RUN mvn package
 
 FROM openjdk:14-alpine3.10
 
+RUN apk add libx11
+RUN apk add libxext
+RUN apk add libxrender
+RUN apk add libxtst-dev
+RUN apk add freetype-dev
+
 RUN mkdir /app
 WORKDIR /app
 
@@ -41,3 +47,8 @@ COPY --from=BUILD /build/skylight-commons-ui/target/skylight-commons-ui* /app/
 COPY --from=BUILD /build/skylight-cucs/target/skylight-cucs* /app/
 
 RUN ls /app
+
+ADD /startup.sh /
+
+ENTRYPOINT [ "/startup.sh" ]
+

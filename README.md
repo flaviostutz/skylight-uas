@@ -53,4 +53,4 @@ See more below:
 
 * docker-compose build
 
-* 
+* docker-compose up

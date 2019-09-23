@@ -46,3 +46,11 @@ We started our project on 2008 and participated on 2010 at Kingaroy - Australia
 See more below:
 * [Outback Challenge Facebook Group] (https://www.facebook.com/groups/177617904551/)
 * [Outback Challenge 2010] (http://www.suasnews.com/outback-challenge-2010/)
+
+## For building
+
+* cd src
+
+* docker-compose build
+
+* 

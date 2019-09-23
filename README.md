@@ -49,8 +49,6 @@ See more below:
 
 ## For building
 
-* cd src
-
 * docker-compose build
 
 * docker-compose up

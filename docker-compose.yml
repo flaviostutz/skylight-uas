@@ -6,5 +6,5 @@ services:
     build: .
     environment:
       - DISPLAY=host.docker.internal:0
-    command: vsm
+    command: cucs
 

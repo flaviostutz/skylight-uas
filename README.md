@@ -49,6 +49,13 @@ See more below:
 
 ## For building
 
+* Start xQuartz in Mac
+
+* Configure xQuartz to accept external connections in "Preferences..." -> Security -> Allow...
+
+* Restart xQuartz
+
 * docker-compose build
 
 * docker-compose up
+

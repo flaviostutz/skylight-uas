@@ -34,6 +34,8 @@ RUN apk add libxext
 RUN apk add libxrender
 RUN apk add libxtst-dev
 RUN apk add freetype-dev
+RUN apk add fontconfig
+RUN apk add ttf-dejavu
 
 RUN mkdir /app
 WORKDIR /app

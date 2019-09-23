@@ -558,8 +558,8 @@ public class XPlaneServices extends Worker implements GPSService, InstrumentsSer
 
 		try {
 			newPacket = new DatagramPacket(outputBuffer, outputBuffer.length, new InetSocketAddress(udpOutputHost, udpVsmToXPlanePort));
-		} catch (SocketException e) {
-			throw new RuntimeException(e);
+//		} catch (SocketException e) {
+//			throw new RuntimeException(e);
 		} catch (IllegalArgumentException e) {
 			throw new RuntimeException(e);
 		}

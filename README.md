@@ -1,6 +1,8 @@
 # skylight-uas
 This is a complete Unmanned Aerial System composed of an Autopilot, along with a Ground Station, VSM, embedded eletronics for sensors and actuators, low and high level controls, all compatible with OTAN's STANAG 4586. We created this system while competing at the UAV Outback Challenge at Australia. We (me and [Eduardo Steinhorst] (https://github.com/edusteinhorst)) designed this between 2008 and 2010.
 
+* [See here our presentation at Outback Challenge 2010] (docs/SkylightTeamPresentation.pdf]
+
 ## Design
 
 This is the third version of the architecture of the UAS hardware and software.
@@ -8,6 +10,10 @@ This is the third version of the architecture of the UAS hardware and software.
 The first version was based on a self made electronics with sensors and actuators. The Autopilot was a MIDP Java application installed on a N95 smartphone. The communications between N95 and sensor/actuators board was Bluetooth and the N95 to ground was through Wifi. In this version we used a lot of things that were ready, but as customization was needed we began to suffer.
 
 At this point we decided to use a second version of the architecture with an onboard computer and a Java main application. In the middle of the refactoring process we realized some great improvements over energy usage, computer dimensions and software architecture, so we started the refactoring to our third version.
+
+![system architecture](docs/architecture.png)
+
+![ground station](docs/groundstation.png)
 
 The third architecture version (current) relies on:
 * 900MHz modem
@@ -19,6 +25,8 @@ The third architecture version (current) relies on:
 * Communications, control and structure compatible with NATO's STANAG 4586 (in theory OTAN could control our Vehicle, and our Ground Station could control OTAN's drones)
 * Self made electronics board for sensoring and actuation
 * See /docs for more documentation (there are some documents that we sent to UAV Outback Challenge describing our system)
+
+![hardware](docs/hardware.png)
 
 ## Capabilities
 * Long range operations (10km+)

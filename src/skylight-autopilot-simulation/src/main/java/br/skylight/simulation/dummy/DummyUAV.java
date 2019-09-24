@@ -27,7 +27,7 @@ public class DummyUAV {
 		pluginManager.registerPluginInstance(Plugin.class, new PayloadPlugin());
 		pluginManager.registerPluginInstance(Plugin.class, new SimulatedPayloadPlugin());
 		pluginManager.registerPluginInstance(Plugin.class, new UAVStoragePlugin());
-		pluginManager.setStartupReadClasspathJars(false);
+		pluginManager.setStartupReadClasspathJars(true);
 		pluginManager.startupPlugins();
 		logger.info(">>Dummy UAV systems started");
 	}

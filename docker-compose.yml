@@ -2,9 +2,20 @@ version: '3.7'
 
 services:
 
-  skylight-uas:
+  skylight-cucs:
     build: .
     environment:
       - DISPLAY=host.docker.internal:0
+    network_mode: host
     command: cucs
+
+  skylight-vsm:
+    build: .
+    network_mode: host
+    command: vsm-simulation
+
+  # skylight-uav:
+  #   build: .
+  #   network_mode: host
+  #   command: uav-simulation
 

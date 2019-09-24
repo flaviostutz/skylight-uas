@@ -50,6 +50,15 @@ The third architecture version (current) relies on:
 
 [![video screenshot](https://img.youtube.com/vi/2C-lTjXJ4d8/0.jpg)](https://youtu.be/2C-lTjXJ4d8)
 
+* Track waypoints test
+
+![waypoints](media/trackToWaypoint2.JPG)
+
+* Loiter test
+
+![loiter](media/loiter-test.jpg)
+
+
 ## UAV Outback Challenge
 We started our project on 2008 and participated on 2010 at Kingaroy - Australia
 See more below:

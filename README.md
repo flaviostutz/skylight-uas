@@ -42,11 +42,11 @@ The third architecture version (current) relies on:
 * Fully autonomous operation on air (vehicle + payload) through mission plans (can be updated on air)
 * Autonomous landing (tested only on simulators because we would need a RTK GPS for this)
 
-* Skylight autopilot landing a Rascal model on FlightGear
+* Skylight autopilot landing a Rascal model on FlightGear (click to play video)
 
 [![video screenshot](https://img.youtube.com/vi/yrF2cjR2COY/0.jpg)](https://youtu.be/yrF2cjR2COY)
 
-* Skylight autopilot landing a Cesna model on XPlane
+* Skylight autopilot landing a Cesna model on XPlane (click to play video)
 
 [![video screenshot](https://img.youtube.com/vi/2C-lTjXJ4d8/0.jpg)](https://youtu.be/2C-lTjXJ4d8)
 

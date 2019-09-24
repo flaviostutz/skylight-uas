@@ -40,6 +40,15 @@ The third architecture version (current) relies on:
 * Customizable emergency plans (loiter and wait for comms, goto comms point, goto landing site)
 * Autonomous take-off/landing (tested only on realistic simulators but not on the real plane because of lack of DGPS)
 * Fully autonomous operation on air (vehicle + payload) through mission plans (can be updated on air)
+* Autonomous landing (tested only on simulators because we would need a RTK GPS for this)
+
+* Skylight autopilot landing a Rascal model on FlightGear
+
+[![video screenshot](https://img.youtube.com/vi/yrF2cjR2COY/0.jpg)](https://youtu.be/yrF2cjR2COY)
+
+* Skylight autopilot landing a Cesna model on XPlane
+
+[![video screenshot](https://img.youtube.com/vi/2C-lTjXJ4d8/0.jpg)](https://youtu.be/2C-lTjXJ4d8)
 
 ## UAV Outback Challenge
 We started our project on 2008 and participated on 2010 at Kingaroy - Australia

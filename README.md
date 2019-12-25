@@ -3,6 +3,11 @@ This is a complete Unmanned Aerial System composed of an Autopilot, along with a
 
 * [See here our presentation at Outback Challenge 2010](docs/SkylightTeamPresentation.pdf]
 
+* See some video recordings at
+  * Camera looking at fixed point while vehicle is loitering - https://youtu.be/FlndEQ9n3b8
+  * Autopilot landing a Cesna while in loop with XPlane - https://youtu.be/2C-lTjXJ4d8
+  * Autopilot landing a Rascal while in loop with FlightGear - https://youtu.be/yrF2cjR2COY
+
 ![ground station](docs/groundstation.png)
 
 ## Design

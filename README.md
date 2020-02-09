@@ -8,6 +8,8 @@ This is a complete Unmanned Aerial System composed of an Autopilot, along with a
   * [Autopilot landing a Cesna while in loop with XPlane](https://youtu.be/2C-lTjXJ4d8)
   * [Autopilot landing a Rascal while in loop with FlightGear](https://youtu.be/yrF2cjR2COY)
 
+* [Skylight Photo Album](https://photos.app.goo.gl/tao5susNYdEoHPdy9)
+
 ![ground station](docs/groundstation.png)
 
 ## Design

@@ -1,5 +1,5 @@
 # skylight-uas
-This is a complete Unmanned Aerial System composed of an Autopilot, along with a Ground Station, VSM, embedded eletronics for sensors and actuators, low and high level controls, all compatible with OTAN's STANAG 4586. We created this system while competing at the UAV Outback Challenge at Australia. We (me and [Eduardo Steinhorst](https://github.com/edusteinhorst)) designed this between 2008 and 2010.
+This is a complete Unmanned Aerial System composed of an Autopilot, along with a Ground Station, VSM, embedded eletronics for sensors and actuators, low and high level controls, all compatible with OTAN's STANAG 4586. We created this system while competing at the [UAV Outback Challenge at Australia](https://outbackchallenge.com.au/). We (me and [Eduardo Steinhorst](https://github.com/edusteinhorst)) designed this between 2008 and 2010.
 
 * [See here our presentation at Outback Challenge 2010](https://github.com/flaviostutz/skylight-uas/blob/master/docs/SkylightTeamPresentation.pdf)
 

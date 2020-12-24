@@ -5,6 +5,8 @@ We created almost the entire system from scratch: Autopilot software, Sensors an
 
 Tons of testing in simulators were used for security and budget reasons (we even created a simple flight dynamics simulator for smoke tests during our dev pipeline and used XPlane/FlightGear por more complete tests for bad weather). It was amazing to see Rascal fly autonomously on our first field test, keeping row, yaw and pitch attitude using a Nokia N95 "computer" with the "autopilot" app (our first system architecture). Lots of things to enhance there, but they are great memories with no footage (we were absolutelly concentrated on our planned tasks/procedures there 😅)! Maybe someday I will come back to work with this kind of beauty...
 
+<img src="media/IMG_5495.JPG" width=600>
+
 * [See here our presentation at Outback Challenge 2010](https://github.com/flaviostutz/skylight-uas/blob/master/docs/SkylightTeamPresentation.pdf)
 
 * See some video recordings at

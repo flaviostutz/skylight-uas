@@ -1,6 +1,10 @@
 # skylight-uas
 This is a complete Unmanned Aerial System composed of an Autopilot, along with a Ground Station, VSM, embedded eletronics for sensors and actuators, low and high level controls, all compatible with OTAN's STANAG 4586. We created this system while competing at the [UAV Outback Challenge at Australia](https://uavchallenge.org/). We (me and [Eduardo Steinhorst](https://github.com/edusteinhorst)) designed this between 2008 and 2010.
 
+We created almost the entire system from scratch: Autopilot software, Sensors and Actuators hardware/embedded software, Ground station software, mission planner, RF and engine tweaks, software and hardware in the loop adapters, Camera stabilization software and the bottle release mechanism.
+
+Tons of testing in simulators were used for security and budget reasons (we even created a simple flight dynamics simulator for smoke tests during our dev pipeline and used XPlane/FlightGear por more complete tests for bad weather). It was amazing to see Rascal fly autonomously on our first field test, keeping row, yaw and pitch attitude using a Nokia N95 "computer" with the "autopilot" app (our first system architecture). Lots of things to enhance there, but they are great memories with no footage (we were absolutelly concentrated on our planned tasks/procedures there 😅)! Maybe someday I will come back to work with this kind of beauty...
+
 * [See here our presentation at Outback Challenge 2010](https://github.com/flaviostutz/skylight-uas/blob/master/docs/SkylightTeamPresentation.pdf)
 
 * See some video recordings at
@@ -10,7 +14,7 @@ This is a complete Unmanned Aerial System composed of an Autopilot, along with a
 
 * [Skylight Photo Album](https://photos.app.goo.gl/thvS9vkLZmswDzBD8)
 
-![ground station](docs/groundstation.png)
+<img src="docs/groundstation.png" width=1000>
 
 ## Design
 
@@ -20,7 +24,7 @@ The first version was based on a self made electronics with sensors and actuator
 
 At this point we decided to use a second version of the architecture with an onboard computer and a Java main application. In the middle of the refactoring process we realized some great improvements over energy usage, computer dimensions and software architecture, so we started the refactoring to our third version.
 
-![system architecture](docs/architecture.png)
+<img src="docs/architecture.png" width=400>
 
 The third architecture version (current) relies on:
 * 900MHz modem
@@ -33,7 +37,7 @@ The third architecture version (current) relies on:
 * Self made electronics board for sensoring and actuation
 * See /docs for more documentation (there are some documents that we sent to UAV Outback Challenge describing our system)
 
-![hardware](docs/hardware.png)
+<img src="docs/hardware.png" width=400>
 
 ## Capabilities
 * Long range operations (10km+)
@@ -68,6 +72,14 @@ The third architecture version (current) relies on:
 
 ## UAV Outback Challenge
 We started our project on 2008 and participated on 2010 at Kingaroy - Australia
+
+* Final checks before heading to the airport to perform our presentation
+<img src="media/IMG_7210.JPG" width=600>
+
+* 4o place in the competition!
+<img src="media/IMG_7299.JPG" width=600>
+
+
 See more below:
 * [Outback Challenge Facebook Group] (https://www.facebook.com/groups/177617904551/)
 * [Outback Challenge 2010] (http://www.suasnews.com/outback-challenge-2010/)
